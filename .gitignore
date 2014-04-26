@@ -1,7 +1,7 @@
-clojure/target/
-clojure/pom.xml
-clojure/.nrepl-port
-haskell/dilemma
+zmq/clojure/target/
+zmq/clojure/pom.xml
+zmq/clojure/.nrepl-port
+zmq/haskell/dilemma
 *.hi
 *.o
 .gitignore~
