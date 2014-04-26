@@ -5,7 +5,9 @@ module Main where
 import System.ZMQ4.Monadic
 import Control.Monad
 import Data.List.NonEmpty (fromList)
+import Data.ByteString
 
+respond :: [ByteString] -> [ByteString]
 respond ("ping":_) = ["pong"]
 respond ("reset":_) = ["ok"]
 respond ("iterate":a) = ["C"]
