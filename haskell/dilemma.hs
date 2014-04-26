@@ -5,8 +5,6 @@ module Main where
 import System.ZMQ4.Monadic
 import Control.Monad
 import Data.List.NonEmpty (fromList)
-import Data.ByteString.Char8 (unpack)
-import Text.Printf
 
 respond ("ping":_) = ["pong"]
 respond ("reset":_) = ["ok"]
