@@ -19,26 +19,28 @@ def iterate(payload):
     my_responses.append(response)
 
     # send back the response to the server
-    socket.send_multipart(["result", response])
+    socket.send_multipart([response])
+
+def reset(payload):
+    socket.send_multipart(["ok"])
 
 def run_strategy():
     return "C"
 
 # define the handlers
-handlers = { 'ping': ping, 'iterate': iterate }
+handlers = { 'ping': ping, 'iterate': iterate, 'reset': reset }
 
 # initialise the zmq context
 context = zmq.Context()
 
 # create a REQ socket, and set the socket identity
 socket = context.socket(zmq.REQ)
-socket.set_string(zmq.IDENTITY, u"py-client:1")
 
 # connect
 socket.connect("tcp://localhost:1441")
 
 # register our strategy
-socket.send_multipart(["reg", "test"])
+socket.send_multipart(["reg", "py:sample"])
 
 while True:
     message = socket.recv_multipart()
