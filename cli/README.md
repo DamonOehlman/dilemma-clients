@@ -8,7 +8,7 @@ The `cli/` directory contains a number of dilemma clients that are designed to b
 At this point you will now be able to run your strategy runner using the following command:
 
 ```
-dilemma --server=<server-uri> --strategy=<name> --cmd=<runner>
+dilemma --server=<server-ip> --name=<name> --runner=<runner>
 ```
 
 ## How it works
@@ -16,5 +16,5 @@ dilemma --server=<server-uri> --strategy=<name> --cmd=<runner>
 The dilemma runner will register itself with the dilemma server and:
 
 ```
-dilemma --server=192.168.0.142 --strategy="team1:always-trust" --cmd="python python/always-trust.py"
+dilemma --server=192.168.0.142 --name="team1:always-trust" --runner="python python/always-trust.py"
 ```
