@@ -19,10 +19,10 @@ def iterate(payload):
     my_responses.append(response)
 
     # send back the response to the server
-    socket.send_multipart([response])
+    socket.send_multipart(["result", response])
 
 def reset(payload):
-    socket.send_multipart(["ok"])
+    socket.send_multipart(["reset:ok"])
 
 def run_strategy():
     return "C"

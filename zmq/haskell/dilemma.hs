@@ -9,8 +9,8 @@ import Data.ByteString
 
 respond :: [ByteString] -> [ByteString]
 respond ("ping":_) = ["pong"]
-respond ("reset":_) = ["ok"]
-respond ("iterate":a) = ["C"]
+respond ("reset":_) = ["reset:ok"]
+respond ("iterate":a) = ["result", "C"]
 respond _ = ["error"]
 
 main :: IO ()
